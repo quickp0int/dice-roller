@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dice Throws</title>
+    <style>html, body {font-family: sans-serif;}</style>
+</head>
+<body>
+    <h1>Here are your dice throws:</h1>
+    <h2 id="target"></h2>
+</body>
+<script>
+    function diceThrow( numSets, numRolls ) {
+        var set = "";
+        for ( var j = 0; j < numSets; j++ ) {
+            var string = "";
+            for ( var i = 0; i < numRolls; i++ ) {
+                string += String( Math.ceil( Math.random() * 6 ) );
+            }
+            set += string + " ";
+            document.getElementById("target").innerHTML = set;
+        }
+    }
+    diceThrow( 6, 5 );
+</script>
+</html>
